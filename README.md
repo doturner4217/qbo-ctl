@@ -1,3 +1,6 @@
+
+![qbo](qbo.png)
+
 - [Description](#description)
 - [Requirements](#requirements)
 - [Linux or Mac Setup](#linux-or-mac-setup)
@@ -12,7 +15,7 @@
   - [Nginx ingress](#nginx-ingress)
   - [DNS](#dns)
   - [Registry](#registry)
-- [Gitlab integration](gitlab.md)
+- [Gitlab integration](#gitlab-integration)
 - [Default ports](#default-ports)
 - [Default configuration](#default-configuration)
 
