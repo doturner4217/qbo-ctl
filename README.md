@@ -90,11 +90,20 @@ $ qbo add cluster -w2 -d eadem.com
 ## Mac
 Unfortunately in Mac, Docker is not running natively in the OS. Docker Desktop runs docker inside LinuxKit which is a light VM but still a VM. You'll need to expose the ports at cluster creation in order to access the containers & services. 
  
-`qbo add cluster -v -p5000 -p6443 -p53/udp -p443 -p80`
+```
+$ qbo add cluster -d`hostname` -p443 -p80 -p53/udp
+[2020/06/23 20:25:29:7167] N:  master.sfo-ml-00048714                        ready
+[2020/06/23 20:26:10:2546] N:  worker-0245e277.sfo-ml-00048714               ready
+
+$ kubectl get nodes
+NAME                              STATUS   ROLES    AGE   VERSION
+master.sfo-ml-00048714            Ready    master   88s   v1.18.1-dirty
+worker-0245e277.sfo-ml-00048714   Ready    <none>   25s   v1.18.1-dirty
+```
  
-Once the cluster has been created the config will be written under `$HOME/.qbo/`
+> kubeconfig will be written under `$HOME/.qbo/`
  
-# Get cluster details
+# Get Kubernetes cluster details
 ```
 $ qbo get nodes
 e3b911261ec4 worker-b6144036.eadem.com                172.17.0.5         eadem/node:v1.18.1        running             
