@@ -23,6 +23,9 @@
 # Description
  
 `qbo` can deploy a multi-node Kubernetes cluster in docker without the need for virtual machines. Well, at least that's the case in Linux. In a Mac you are actually running inside LinuxKit when using Docker Desktop (See caveats and details below). `qbo` allows you to add and remove nodes as you see fit.
+
+
+![demo](demo.gif)
  
  
 # Requirements
@@ -181,12 +184,9 @@ Option | value
 --image | eadem/node:v1.18.1
 --workers | 1
  
- 
- 
- 
- 
- 
- 
- 
- 
 
+ 
+ 
+ 
+ 
+ 
