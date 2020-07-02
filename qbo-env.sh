@@ -31,8 +31,6 @@ config_help_linux () {
         echo "alias qbo=\"docker run -t --user=$(id -u):$1 -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.qbo:/tmp/qbo $repo qbo\""
         echo "# kubeconfig"
         echo "export KUBECONFIG=$HOME/.qbo/admin.conf"	
-        echo "# kubectl"
-        echo "alias kubectl='docker run -t --user=$(id -u):$1 -v \`pwd\`:/tmp/pwd -v $HOME/.qbo:/tmp/qbo $repo kubectl'"
         echo "# -----END QBO CONFIG-----"
 
 }
@@ -46,8 +44,6 @@ config_help_mac () {
         echo "alias qbo=\"docker run -t -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.qbo:/tmp/qbo $repo qbo\""
         echo "# kubeconfig"
         echo "export KUBECONFIG=$HOME/.qbo/admin.conf"	
-        echo "# kubectl"
-        echo "alias kubectl='docker run -t  -v \`pwd\`:/tmp/pwd -v $HOME/.qbo:/tmp/qbo $repo kubectl'"
         echo "# -----END QBO CONFIG-----"
 
 }
@@ -68,7 +64,7 @@ linux () {
     if type getent > /dev/null 2>&1; then
         g=$(getent group docker | awk -F ':' '{print $3}')
     else
-        g=$(cat /etc/group | grep docker | awk -F ':' '{print $3}')
+        g=$(cat /etc/group | grep docker: | awk -F ':' '{print $3}')
     fi
     alias qbo="docker run -t --user=$(id -u):$g -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.qbo:/tmp/qbo $repo qbo"
     m=$(qbo get cluster | awk '{print $2}')

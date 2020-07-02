@@ -5,7 +5,7 @@ printf "Kubernetes cluster name:\n\n"
 echo "qbo"
 
 printf "\nAPI URL:\n\n"
-g=$(cat /etc/group | grep docker | awk -F ':' '{print $3}')
+g=$(cat /etc/group | grep docker: | awk -F ':' '{print $3}')
 
 alias qbo="docker run -t --user=$(id -u):$g -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.qbo:/tmp/qbo $repo qbo"
 api=$(qbo get cluster | awk '{print $3}')
