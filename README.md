@@ -8,7 +8,7 @@
 - [Create a multinode Kubernetes cluster](#create-a-multinode-kubernetes-cluster)
   - [Linux](#linux)
   - [Mac](#mac)
-- [Get cluster details](#get-cluster-details)
+- [Get Kubernetes cluster details](#get-kubernetes-cluster-details)
 - [Add a worker node to the cluster](#add-a-worker-node-to-the-cluster)
 - [Tests](#tests)
   - [Kubectl](#kubectl)
@@ -50,8 +50,6 @@ docker.io/eadem/qbo:latest
 alias qbo="docker run -t --user=1000:1001 -v /var/run/docker.sock:/var/run/docker.sock -v /home/alex/.qbo:/tmp/qbo eadem/qbo:latest qbo"
 # kubeconfig
 export KUBECONFIG=/home/alex/.qbo/admin.conf
-# kubectl
-alias kubectl='docker run -t --user=1000:1001 -v `pwd`:/tmp/pwd -v /home/alex/.qbo:/tmp/qbo eadem/qbo:latest kubectl'
 # -----END QBO CONFIG-----
 ```
  
