@@ -82,7 +82,7 @@ Upon cluster creation, `qbo` will install Calico network, Nginx ingress and crea
 In Linux you'll have access to all the worker and master nodes running in containers via IP. Docker becomes the equivalent of your VM.
  
 ```
-$ qbo add cluster -w2 -d eadem.com
+$ qbo add cluster -w3 -p5000 -d`HOSTNAME`
 [2020/06/23 04:19:50:8664] N:  master.eadem.com                              ready
 [2020/06/23 04:20:39:8318] N:  worker-bf3a1c20.eadem.com                     ready
 [2020/06/23 04:21:18:6250] N:  worker-b6144036.eadem.com                     ready
